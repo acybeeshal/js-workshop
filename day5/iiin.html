@@ -1,0 +1,30 @@
+
+<!-- Exercise 3: DOM Manipulation with Fetch API Data
+Write a JavaScript program that fetches data from an API using the Fetch API and performs DOM manipulation. Follow these steps:
+Fetch data from an API using the Fetch API. In the then method, convert the response to JSON using the json method. In the next then method, manipulate the received data by dynamically creating HTML elements. Use DOM manipulation techniques to append the created elements to the desired location in the HTML page to display the data.  -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fetch API with DOM Manipulation</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script>
+function fetchData() {
+  fetch("https://api.example.com/data")
+    .then(response => response.json())
+    .then(data => {
+      const list = document.querySelector("ul");
+      for (const item of data) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+      }
+    });
+}
+
+window.onload = fetchData;
+</script>
+</head>
+<body>
+<ul id="list"></ul>
+</body>
+</html>

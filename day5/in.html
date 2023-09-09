@@ -1,0 +1,34 @@
+<!-- Exercise 1: Callback Functions with Fetch API
+
+Write a JavaScript program that fetches data from an API using the Fetch API and utilizes callback functions. Follow these steps:
+
+    Define a function called fetchData that takes a URL and a callback function as parameters.
+    Inside the fetchData function, use the Fetch API to make a GET request to the specified URL.
+    In the then method, convert the response to JSON using the json method.
+    In the then method, call the callback function with the received data as the argument.
+    Implement a callback function called processData that takes the received data as a parameter.
+    Inside the processData function, manipulate and display the received data as desired. -->
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fetch API with Callback Functions</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script>
+function fetchData(url, callback) {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => callback(data));
+}
+
+function processData(data) {
+  document.write(data);
+}
+
+fetchData("https://jsonplaceholder.typicode.com/posts/1", processData);
+</script>
+</head>
+<body>
+    
+</body>
+</html>
