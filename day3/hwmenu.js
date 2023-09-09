@@ -167,7 +167,6 @@ var cars = [
   
       sectionCenterElement.innerHTML= myHTMLGenerator.join("");
     }
-  
     //homework
 function displayOurButtons() {
   const categories = cars.reduce(
